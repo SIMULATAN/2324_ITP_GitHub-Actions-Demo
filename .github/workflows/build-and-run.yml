@@ -37,6 +37,14 @@ jobs:
       - docs
       - build-and-run
     steps:
+      - name: Download our text file
+        uses: actions/download-artifact@v3
+        with:
+          name: hello
+      - name: List files
+        run: |
+          pwd
+          ls -l
       - name: Deploy to server
         run: |
           echo 'Deploying now...'
